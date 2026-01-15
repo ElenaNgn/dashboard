@@ -1,0 +1,1159 @@
+python: can't open file 'C:\\Users\\e1012121\\streamlit_app\\skripte\\eps_to_jpg_and_pdf_withdate.py': [Errno 2] No such file or directory
+python: can't open file 'C:\\Users\\e1012121\\streamlit_app\\skripte\\eps_to_jpg_and_pdf_withdate.py': [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 215, in <module>
+    cfg = load_config_from_json(Path(args.config))
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 200, in load_config_from_json
+    cfg.target_jpg_sap = Path(data["target_jpg_sap"])
+                              ~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'target_jpg_sap'
+Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 215, in <module>
+    cfg = load_config_from_json(Path(args.config))
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 200, in load_config_from_json
+    cfg.target_jpg_sap = Path(data["target_jpg_sap"])
+                              ~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'target_jpg_sap'
+Verarbeite Zeichnungen:   0%|          | 0/8 [00:00<?, ?it/s]Verarbeite Zeichnungen:   0%|          | 0/8 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 240, in <module>
+    main(cfg)
+    ~~~~^^^^^
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 222, in main
+    process_all(cfg)
+    ~~~~~~~~~~~^^^^^
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 151, in process_all
+    print(f"\u274c Fehler bei {name}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 0: character maps to <undefined>
+Verarbeite Zeichnungen:   0%|          | 0/8 [00:00<?, ?it/s]Verarbeite Zeichnungen:   0%|          | 0/8 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 240, in <module>
+    main(cfg)
+    ~~~~^^^^^
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 222, in main
+    process_all(cfg)
+    ~~~~~~~~~~~^^^^^
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 151, in process_all
+    print(f"\u274c Fehler bei {name}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 0: character maps to <undefined>
+Verarbeite Zeichnungen:   0%|          | 0/8 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  12%|#2        | 1/8 [00:00<00:05,  1.34it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  25%|##5       | 2/8 [00:01<00:04,  1.22it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  38%|###7      | 3/8 [00:02<00:04,  1.18it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  50%|#####     | 4/8 [00:02<00:02,  1.51it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  62%|######2   | 5/8 [00:03<00:01,  1.78it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  75%|#######5  | 6/8 [00:03<00:00,  2.03it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  88%|########7 | 7/8 [00:03<00:00,  2.23it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen: 100%|##########| 8/8 [00:04<00:00,  2.44it/s]Verarbeite Zeichnungen: 100%|##########| 8/8 [00:04<00:00,  1.86it/s]
+ERROR: Fehler bei 1424555
+ERROR: Fehler bei 1424556
+ERROR: Fehler bei 1424557
+ERROR: Fehler bei 1943113
+ERROR: Fehler bei 1943114
+ERROR: Fehler bei 1943115
+ERROR: Fehler bei 1943116
+ERROR: Fehler bei 1943118
+Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 241, in <module>
+    main(cfg)
+    ~~~~^^^^^
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 225, in main
+    print("\U0001f389 Fertig!")
+    ~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f389' in position 0: character maps to <undefined>
+Verarbeite Zeichnungen:   0%|          | 0/8 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  12%|#2        | 1/8 [00:00<00:05,  1.33it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  25%|##5       | 2/8 [00:01<00:04,  1.29it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  38%|###7      | 3/8 [00:02<00:04,  1.25it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  50%|#####     | 4/8 [00:02<00:02,  1.58it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  62%|######2   | 5/8 [00:03<00:01,  1.88it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  75%|#######5  | 6/8 [00:03<00:00,  2.10it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  88%|########7 | 7/8 [00:03<00:00,  2.27it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 147, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen: 100%|##########| 8/8 [00:04<00:00,  2.51it/s]Verarbeite Zeichnungen: 100%|##########| 8/8 [00:04<00:00,  1.93it/s]
+Fehler bei 1424555
+Fehler bei 1424556
+Fehler bei 1424557
+Fehler bei 1943113
+Fehler bei 1943114
+Fehler bei 1943115
+Fehler bei 1943116
+Fehler bei 1943118
+Fertig!
+Verarbeite Zeichnungen:   0%|          | 0/8 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 166, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  12%|#2        | 1/8 [00:00<00:04,  1.42it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 166, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  25%|##5       | 2/8 [00:01<00:04,  1.36it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 166, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  38%|###7      | 3/8 [00:02<00:03,  1.34it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 166, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  50%|#####     | 4/8 [00:02<00:02,  1.66it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 166, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  62%|######2   | 5/8 [00:03<00:01,  1.85it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 166, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  75%|#######5  | 6/8 [00:03<00:00,  2.05it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 166, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen:  88%|########7 | 7/8 [00:03<00:00,  2.24it/s]Traceback (most recent call last):
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 166, in process_all
+    img = load_image(src)
+  File "C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py", line 66, in load_image
+    img.load(scale=12)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 401, in load
+    self.im = Ghostscript(self.tile, self.size, self.fp, scale, transparency)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\site-packages\PIL\EpsImagePlugin.py", line 159, in Ghostscript
+    subprocess.check_call(command, startupinfo=startupinfo)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 414, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 395, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\e1012121\AppData\Local\anaconda3\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Das System kann die angegebene Datei nicht finden
+Verarbeite Zeichnungen: 100%|##########| 8/8 [00:04<00:00,  2.48it/s]Verarbeite Zeichnungen: 100%|##########| 8/8 [00:04<00:00,  1.95it/s]
+Fehler bei 1424555
+Fehler bei 1424556
+Fehler bei 1424557
+Fehler bei 1943113
+Fehler bei 1943114
+Fehler bei 1943115
+Fehler bei 1943116
+Fehler bei 1943118
+Fertig!
+2025-12-12 16:15:57.281 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.001 
+  [33m[1mWarning:[0m to view this Streamlit app on a browser, run it with the following
+  command:
+
+    streamlit run C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py [ARGUMENTS]
+2025-12-12 16:15:58.002 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.002 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.002 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.002 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.002 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.002 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.002 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.002 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.002 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.003 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.003 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.003 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.003 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.003 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.003 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.003 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:15:58.003 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:47.305 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.045 
+  [33m[1mWarning:[0m to view this Streamlit app on a browser, run it with the following
+  command:
+
+    streamlit run C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py [ARGUMENTS]
+2025-12-12 16:16:48.045 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.046 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.046 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.046 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.046 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.046 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.047 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.047 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.047 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.047 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.047 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.047 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.047 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.047 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.048 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.048 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:16:48.048 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:47.512 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.327 
+  [33m[1mWarning:[0m to view this Streamlit app on a browser, run it with the following
+  command:
+
+    streamlit run C:\Users\e1012121\streamlit_app\skripte\eps_to_jpg_and_pdf_withdate.py [ARGUMENTS]
+2025-12-12 16:23:48.327 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.327 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.328 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.329 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.329 Session state does not function when running a script without `streamlit run`
+2025-12-12 16:23:48.329 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.329 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.329 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.329 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.329 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.330 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.330 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.330 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.330 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.330 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.330 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.330 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.331 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.331 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.331 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.331 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.331 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.331 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.331 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.332 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.332 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-12-12 16:23:48.332 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
