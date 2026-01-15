@@ -1,0 +1,33 @@
+# Core Framework
+streamlit
+
+# Datenverarbeitung
+pandas
+openpyxl
+
+# Bildverarbeitung
+Pillow
+
+# PDF-Verarbeitung
+PyMuPDF
+
+# Netzwerk/Downloads
+requests
+
+# Standard-Bibliotheken (bereits in Python enthalten, hier nur zur Dokumentation)
+# pathlib - Standard
+# os - Standard
+# shutil - Standard
+# io - Standard
+# tempfile - Standard
+# zipfile - Standard
+# datetime - Standard
+# json - Standard
+# threading - Standard
+# queue - Standard
+# multiprocessing - Standard
+# concurrent.futures - Standard
+# traceback - Standard
+# time - Standard
+# re - Standard
+# urllib - Standard
