@@ -8,6 +8,9 @@ Man kann wählen, ob halbseitig oder ganzseitig dargestellt werden soll
 ÄNDERUNG v2.1: Datum 5mm nach unten verschoben
 ÄNDERUNG v2.2: Bild im PDF 10mm nach oben verschoben
 ÄNDERUNG v2.3: Bild im PDF 10mm nach unten (nur halbseitig)
+ÄNDERUNG v2.4: PDF wird zusätzlich nach S:\dataexpert\drawing kopiert
+ÄNDERUNG v2.5: Excel-Spalten angepasst - neue Struktur mit FILEP, PDF, DataExpert
+ÄNDERUNG v2.6: Option zum Ein-/Ausschalten des Kopierens in Netzlaufwerke (Standard: AN)
 
 """
 
@@ -52,6 +55,7 @@ class Config:
         # SAP-Pfade (optional, falls benötigt)
         self.target_jpg_sap = Path(r"S:\Multimedia\SAP\YM1")
         self.target_pdf_sap = Path(r"S:\Multimedia\SAP\YM2")
+        self.target_pdf_dataexpert = Path(r"S:\dataexpert\drawing")
         
         # Excel wird im Importfiles-Ordner gespeichert
         self.excel_output = None  # Wird später gesetzt
@@ -77,6 +81,9 @@ class Config:
         
         self.font_path = "arial.ttf"
         self.font_size = 30
+        
+        # Kopieren-Option (Standard: True)
+        self.copy_to_network = True
     
     def _find_ghostscript(self):
         """Versucht Ghostscript automatisch zu finden"""
@@ -430,6 +437,7 @@ class ProcessingJob:
         self.start_time = datetime.now()
         self.end_time: Optional[datetime] = None
         self.copied_to_sap = False
+        self.copied_to_dataexpert = False
         self.found_files = []  # Liste der gefundenen Dateien für Debugging
 
 
@@ -588,27 +596,42 @@ def process_job_worker(job: ProcessingJob, status_queue: queue.Queue):
                 job.errors.append(error_msg)
                 status_queue.put(("error", error_msg))
         
-        # Kopieren nach SAP (optional)
-        job.current_file = "Kopiere nach SAP..."
-        status_queue.put(("status", job))
-        
-        try:
-            job.cfg.target_jpg_sap.mkdir(parents=True, exist_ok=True)
-            job.cfg.target_pdf_sap.mkdir(parents=True, exist_ok=True)
+        # Kopieren nach SAP und dataexpert (optional)
+        if job.cfg.copy_to_network:
+            job.current_file = "Kopiere nach SAP und dataexpert..."
+            status_queue.put(("status", job))
             
-            jpgs = list(job.cfg.dir_webjpeg.glob("*.jpg"))
-            pdfs = list(job.cfg.dir_webjpeg.glob("*.pdf"))
-            
-            for f in jpgs:
-                shutil.copy2(f, job.cfg.target_jpg_sap / f.name)
-            for f in pdfs:
-                shutil.copy2(f, job.cfg.target_pdf_sap / f.name)
-            
-            job.copied_to_sap = True
-        except Exception as e:
-            job.errors.append(f"Warnung: Kopieren nach SAP fehlgeschlagen: {e}")
+            try:
+                job.cfg.target_jpg_sap.mkdir(parents=True, exist_ok=True)
+                job.cfg.target_pdf_sap.mkdir(parents=True, exist_ok=True)
+                job.cfg.target_pdf_dataexpert.mkdir(parents=True, exist_ok=True)
+                
+                jpgs = list(job.cfg.dir_webjpeg.glob("*.jpg"))
+                pdfs = list(job.cfg.dir_webjpeg.glob("*.pdf"))
+                
+                # Kopiere JPGs nach SAP YM1
+                for f in jpgs:
+                    shutil.copy2(f, job.cfg.target_jpg_sap / f.name)
+                
+                # Kopiere PDFs nach SAP YM2 UND dataexpert\drawing
+                for f in pdfs:
+                    shutil.copy2(f, job.cfg.target_pdf_sap / f.name)
+                    shutil.copy2(f, job.cfg.target_pdf_dataexpert / f.name)
+                
+                job.copied_to_sap = True
+                job.copied_to_dataexpert = True
+                status_queue.put(("info", f"✓ {len(pdfs)} PDFs kopiert nach YM2 und dataexpert\\drawing"))
+                
+            except Exception as e:
+                job.errors.append(f"Warnung: Kopieren fehlgeschlagen: {e}")
+                job.copied_to_sap = False
+                job.copied_to_dataexpert = False
+                status_queue.put(("warning", f"Kopieren fehlgeschlagen: {e}"))
+        else:
+            # Kopieren wurde vom Benutzer deaktiviert
             job.copied_to_sap = False
-            status_queue.put(("warning", f"SAP-Kopieren fehlgeschlagen: {e}"))
+            job.copied_to_dataexpert = False
+            status_queue.put(("info", "ℹ️ Kopieren in Netzlaufwerke übersprungen (deaktiviert)"))
         
         # Excel erstellen (im Importfiles-Ordner)
         job.current_file = "Erstelle Excel..."
@@ -616,19 +639,22 @@ def process_job_worker(job: ProcessingJob, status_queue: queue.Queue):
         
         jpgs = list(job.cfg.dir_webjpeg.glob("*.jpg"))
         
-        # Pfade für Excel - Format: SAP\YM1\datei.jpg
-        jpg_paths = []
-        pdf_paths = []
+        # Pfade für Excel - Format: \Multimedia\SAP\YM1\datei.jpg
+        filep_paths = []
+        pdf_ym2_paths = []
+        pdf_dataexpert_paths = []
         
         for f in jpgs:
-            jpg_paths.append(f"\\SAP\\YM1\\{f.name}")
-            pdf_paths.append(f"\\SAP\\YM2\\{f.stem}.pdf")
+            filep_paths.append(f"\\Multimedia\\SAP\\YM1\\{f.name}")
+            pdf_ym2_paths.append(f"\\Multimedia\\SAP\\YM2\\{f.stem}.pdf")
+            pdf_dataexpert_paths.append(f"\\dataexpert\\drawing\\{f.stem}.pdf")
         
         df = pd.DataFrame({
             "Reihenfolge": range(1, len(jpgs) + 1),
-            "Artikel-Nr": [f.stem[:4] + " " + f.stem[4:] for f in jpgs],
-            "Masszeichnung JPG (YM1)": jpg_paths,
-            "Masszeichnung PDF (YM2)": pdf_paths,
+            "Artikel-Nr": [""] * len(jpgs),
+            "Masszeichnung (FILEP)": filep_paths,
+            "Masszeichnung (PDF)": pdf_ym2_paths,
+            "Masszeichnung (DataExpert)": pdf_dataexpert_paths,
             "Status": ["allg. Mutation"] * len(jpgs)
         })
         
@@ -670,6 +696,7 @@ Dieses Skript verarbeitet Masszeichnungen nach der Projektordner-Struktur:
 - **Input**: `2_Masszeichnungen/1_Originale` (EPS/JPG)
 - **Output**: `2_Masszeichnungen/2b_WebJPEG` (JPG + PDF mit Datum)
 - **Import**: `8_Importfiles_Media-Datenpfade` (Excel-File)
+- **Kopie** (optional): PDFs werden nach `S:\Multimedia\SAP\YM2` und `S:\dataexpert\drawing` kopiert
 """)
 
 st.divider()
@@ -699,6 +726,14 @@ with st.sidebar:
         key="format_checkbox"
     )
     
+    # Kopieren-Option
+    copy_to_network = st.checkbox(
+        "Dateien ins S-Laufwerk kopieren",
+        value=True,
+        key="copy_checkbox",
+        help="Aktivieren: JPGs und PDFs werden nach S:\Multimedia\SAP und S:\dataexpert\drawing kopiert"
+    )
+    
     st.divider()
     
     # Projekt-Pfad eingeben
@@ -718,6 +753,9 @@ with st.sidebar:
         
         # Wende Format-Einstellungen auf Config an
         cfg.height_cm = 9.6 if halbseitig else 21.7
+        
+        # Wende Kopieren-Einstellung an
+        cfg.copy_to_network = copy_to_network
         
         st.divider()
         st.markdown("### 📂 Ordnerstruktur")
@@ -764,6 +802,10 @@ with st.sidebar:
                 "SAP PDF-Ziel (YM2):",
                 value=str(cfg.target_pdf_sap)
             ))
+            cfg.target_pdf_dataexpert = Path(st.text_input(
+                "Dataexpert PDF-Ziel:",
+                value=str(cfg.target_pdf_dataexpert)
+            ))
             
             # Word-Vorlage (optional änderbar)
             cfg.vorlage_docx = Path(st.text_input(
@@ -783,6 +825,7 @@ with st.sidebar:
     - JPG mit aktuellem Datum
     - PDF im Template mit aktuellem Datum und Artikelnummer
     - Excel-Importfile
+    - PDF-Kopie nach YM2 und dataexpert\\drawing (optional)
     """)
 
 
@@ -814,9 +857,11 @@ with tab1:
                             'total_files': msg_data.total_files,
                             'errors': msg_data.errors,
                             'copied_to_sap': msg_data.copied_to_sap,
+                            'copied_to_dataexpert': msg_data.copied_to_dataexpert,
                             'output_dir': msg_data.cfg.dir_webjpeg,
                             'jpg_sap': msg_data.cfg.target_jpg_sap,
-                            'pdf_sap': msg_data.cfg.target_pdf_sap
+                            'pdf_sap': msg_data.cfg.target_pdf_sap,
+                            'pdf_dataexpert': msg_data.cfg.target_pdf_dataexpert
                         }
             except queue.Empty:
                 pass
@@ -843,7 +888,7 @@ with tab1:
             st.success("🎉 **Verarbeitung abgeschlossen!**")
             
             # Metriken
-            col1, col2, col3 = st.columns(3)
+            col1, col2, col3, col4 = st.columns(4)
             with col1:
                 st.metric("Verarbeitete Dateien", result['total_files'])
             with col2:
@@ -852,6 +897,9 @@ with tab1:
             with col3:
                 sap_status = "✅ Ja" if result['copied_to_sap'] else "⚠️ Nein"
                 st.metric("SAP-Kopie", sap_status)
+            with col4:
+                de_status = "✅ Ja" if result['copied_to_dataexpert'] else "⚠️ Nein"
+                st.metric("Dataexpert-Kopie", de_status)
             
             st.divider()
             
@@ -870,12 +918,14 @@ JPG & PDF: {result['output_dir']}
 Excel: {result['excel_path']}
             """)
             
-            if result['copied_to_sap']:
-                st.markdown("**SAP-Laufwerk:**")
-                st.code(f"""
-JPG (YM1): {result['jpg_sap']}
-PDF (YM2): {result['pdf_sap']}
-                """)
+            if result['copied_to_sap'] or result['copied_to_dataexpert']:
+                st.markdown("**Netzwerk-Laufwerke:**")
+                copy_info = ""
+                if result['copied_to_sap']:
+                    copy_info += f"JPG (YM1): {result['jpg_sap']}\nPDF (YM2): {result['pdf_sap']}\n"
+                if result['copied_to_dataexpert']:
+                    copy_info += f"PDF (dataexpert): {result['pdf_dataexpert']}\n"
+                st.code(copy_info)
             
             # Excel-Vorschau
             if result['result_df'] is not None:
@@ -929,6 +979,10 @@ PDF (YM2): {result['pdf_sap']}
             with col3:
                 st.info("📄 **Import (Importfiles)**")
                 st.success("✅ Bereit")
+                if copy_to_network:
+                    st.caption("📤 Netzwerk-Kopie: AN")
+                else:
+                    st.caption("📤 Netzwerk-Kopie: AUS")
             
             st.divider()
             
@@ -1002,6 +1056,11 @@ with tab2:
         └── Import_MZ_20240109_153045.xlsx  ← HIER: Excel-File
     ```
 
+    ### PDF-Kopie Ziele
+    
+    Die generierten PDFs werden automatisch in folgende Ordner kopiert:
+    - **S:\Multimedia\SAP\YM2** (bestehend)
+    - **S:\dataexpert\drawing** (neu in v2.4)
     
     """)
     
@@ -1010,6 +1069,6 @@ with tab2:
 st.divider()
 st.markdown("""
 <div style='text-align: center; color: gray; padding: 20px;'>
-    <small>Masszeichnungs-Verarbeitung v2.3</small>
+    <small>Masszeichnungs-Verarbeitung v2.6 - Optional: Netzwerk-Kopie aktivieren/deaktivieren</small>
 </div>
 """, unsafe_allow_html=True)
