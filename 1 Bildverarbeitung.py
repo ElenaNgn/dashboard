@@ -48,7 +48,7 @@ if 'img_processed_images' not in st.session_state:
 
 # Haupt-Funktion für Bildverarbeitung
 def process_images_streamlit(uploaded_files, use_network_paths=False, 
-                              folder_path=None):
+                              folder_path=None, copy_to_s_drive=True):
     """
     Verarbeitet hochgeladene Bilder oder Bilder aus Netzwerkpfad
     
@@ -56,8 +56,12 @@ def process_images_streamlit(uploaded_files, use_network_paths=False,
         uploaded_files: Liste von hochgeladenen Dateien (bei Upload-Modus)
         use_network_paths: Boolean, ob Netzwerkpfad verwendet werden soll
         folder_path: Vollständiger Pfad zum Projektordner
+        copy_to_s_drive: Boolean, ob Dateien ins S-Laufwerk kopiert werden sollen
     """
     try:
+        # Variable für S-Laufwerk-Status
+        s_drive_copied = False
+        
         # Bei Netzwerkpfad: Direkt in Projektordner arbeiten
         # Bei Upload: Temporäres Verzeichnis verwenden
         if use_network_paths and folder_path:
@@ -119,8 +123,6 @@ def process_images_streamlit(uploaded_files, use_network_paths=False,
             dir_artikelbild_max.mkdir(parents=True, exist_ok=True)
             dir_katalog.mkdir(parents=True, exist_ok=True)
             dir_importfiles.mkdir(parents=True, exist_ok=True)
-            
-            copy_to_s_drive = False
             
             # Von Upload laden
             if not uploaded_files:
@@ -251,8 +253,9 @@ def process_images_streamlit(uploaded_files, use_network_paths=False,
         progress_bar.progress(0.66)
         st.success(f"✅ {completed_count} Katalogbilder erstellt")
         
-        # SCHRITT 3: Kopiere zu S-Laufwerk (nur im Netzwerkpfad-Modus)
-        if use_network_paths and folder_path:
+        # SCHRITT 3: Kopiere zu S-Laufwerk (nur im Netzwerkpfad-Modus und wenn aktiviert)
+        s_drive_copied = False
+        if use_network_paths and folder_path and copy_to_s_drive:
             st.write("**Schritt 3/4:** Kopiere Dateien zu S-Laufwerk...")
             copy_progress = st.progress(0)
             copy_status = st.empty()
@@ -264,17 +267,17 @@ def process_images_streamlit(uploaded_files, use_network_paths=False,
             try:
                 if not target_originalbilder.parent.exists():
                     st.warning("⚠️ S-Laufwerk nicht erreichbar - Dateien werden nur im Projektordner gespeichert")
-                    copy_to_s_drive = False
+                    s_drive_copied = False
                 else:
                     target_originalbilder.mkdir(parents=True, exist_ok=True)
                     target_artikelbild_max.mkdir(parents=True, exist_ok=True)
                     target_katalog.mkdir(parents=True, exist_ok=True)
-                    copy_to_s_drive = True
+                    s_drive_copied = True
             except Exception as e:
                 st.warning(f"⚠️ S-Laufwerk nicht erreichbar: {e}")
-                copy_to_s_drive = False
+                s_drive_copied = False
             
-            if copy_to_s_drive:
+            if s_drive_copied:
                 total_copy_files = len(image_files) * 3
                 completed_copy = 0
                 
@@ -308,9 +311,13 @@ def process_images_streamlit(uploaded_files, use_network_paths=False,
                 copy_status.text("✅ Dateien zu S-Laufwerk kopiert!")
                 st.success(f"✅ {completed_copy} Dateien ins S-Laufwerk kopiert")
                 progress_bar.progress(0.80)
+            else:
+                st.info("ℹ️ Schritt 3: S-Laufwerk-Kopie übersprungen (deaktiviert)")
+        elif use_network_paths and folder_path and not copy_to_s_drive:
+            st.info("ℹ️ Schritt 3: S-Laufwerk-Kopie übersprungen (deaktiviert)")
         
         # SCHRITT 4 (bzw. 3 im Upload-Modus): Excel erstellen
-        step_num = "4/4" if (use_network_paths and folder_path) else "3/3"
+        step_num = "4/4" if (use_network_paths and folder_path and copy_to_s_drive) else "3/3"
         st.write(f"**Schritt {step_num}:** Erstelle Import-Excel...")
         status_text.text("Generiere Excel-Datei...")
         
@@ -333,7 +340,7 @@ def process_images_streamlit(uploaded_files, use_network_paths=False,
             """)
             
             st.markdown("**S-Laufwerk (Multimedia):**")
-            if copy_to_s_drive:
+            if s_drive_copied:
                 st.markdown("""
                 - **Originale:** `S:/Multimedia/Originale`
                 - **Artikelbild max:** `S:/Multimedia/Print/BAD_Artikelbild_maximal`
@@ -341,7 +348,10 @@ def process_images_streamlit(uploaded_files, use_network_paths=False,
                 """)
                 st.success("✅ Alle Dateien wurden in Projektordner UND S-Laufwerk gespeichert!")
             else:
-                st.warning("⚠️ S-Laufwerk nicht erreichbar - nur im Projektordner gespeichert")
+                if copy_to_s_drive:
+                    st.warning("⚠️ S-Laufwerk nicht erreichbar - nur im Projektordner gespeichert")
+                else:
+                    st.info("ℹ️ S-Laufwerk-Kopie deaktiviert - nur im Projektordner gespeichert")
         
         # Bei Upload-Modus: Kopiere für Download
         if not use_network_paths:
@@ -367,7 +377,7 @@ def process_images_streamlit(uploaded_files, use_network_paths=False,
             'katalog_dir': dir_katalog,
             'total_files': total_files,
             'is_network_mode': use_network_paths,
-            'copy_to_s_drive': copy_to_s_drive if use_network_paths else False
+            'copy_to_s_drive': s_drive_copied if use_network_paths else False
         }
         
         return results
@@ -517,6 +527,14 @@ with st.sidebar:
         help="Wähle Netzwerkpfad oder Upload"
     )
     
+    # Kopieren-Option
+    copy_to_s_drive = st.checkbox(
+        "Dateien ins S-Laufwerk kopieren",
+        value=True,
+        key="copy_to_s_drive_checkbox",
+        help="Aktivieren: Bilder werden nach S:\Multimedia\SAP kopiert (YM1 für JPG, YM2 für TIFF)"
+    )
+    
     st.divider()
     
     folder_path_input = None
@@ -559,7 +577,7 @@ with tab1:
                                 pass
         
         if st.button("🚀 Verarbeitung starten", type="primary", disabled=not uploaded_files):
-            results = process_images_streamlit(uploaded_files)
+            results = process_images_streamlit(uploaded_files, copy_to_s_drive=copy_to_s_drive)
             
             if results:
                 st.session_state.img_processing_complete = True
@@ -589,7 +607,7 @@ with tab1:
             st.warning("⚠️ Bitte Pfad eingeben")
         
         if st.button("🚀 Verarbeitung starten", type="primary", disabled=not folder_path_input):
-            results = process_images_streamlit(None, use_network_paths=True, folder_path=folder_path_input)
+            results = process_images_streamlit(None, use_network_paths=True, folder_path=folder_path_input, copy_to_s_drive=copy_to_s_drive)
             
             if results:
                 st.session_state.img_processing_complete = True
@@ -623,7 +641,11 @@ with tab1:
             if results.get('copy_to_s_drive'):
                 st.success("✅ Auch auf S-Laufwerk gespeichert!")
             else:
-                st.warning("⚠️ S-Laufwerk nicht erreichbar")
+                # Prüfe ob Option aktiviert war
+                if copy_to_s_drive:
+                    st.warning("⚠️ S-Laufwerk nicht erreichbar")
+                else:
+                    st.info("ℹ️ S-Laufwerk-Kopie deaktiviert")
             
             with st.expander("💾 Optional: Download"):
                 with open(results['excel_path'], 'rb') as f:
